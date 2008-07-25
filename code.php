@@ -5,19 +5,19 @@
     public function __construct() {
       $this->setField(array("attr" => "title",
         "type" => "text",
-        "label" => __("Title", "text"),
+        "label" => __("Title", "code"),
         "optional" => true,
         "bookmarklet" => "title"));
         
       $this->setField(array("attr" => "code",
         "type" => "text_block",
-        "label" => __("Code", "text"),
+        "label" => __("Code", "code"),
         "optional" => false,
         "bookmarklet" => "selection"));
         
       $this->setField(array("attr" => "language",
         "type" => "select",
-        "label" => __("Language", "text"),
+        "label" => __("Language", "code"),
         "options" => getLanguages(),
         "optional" => false));
       
