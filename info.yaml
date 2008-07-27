@@ -1,6 +1,6 @@
 name: Code
 url: http://guitsaru.com/
-version: 1
+version: 1.1
 description: Post code snippets with geshi syntax highlighting.
 author:
   name: Matt Pruitt

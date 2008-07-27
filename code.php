@@ -62,10 +62,13 @@
       return $post->code;
     }
     
-    public function format_code($text, $post = null) {
-      if (isset($post)) {
-				$post->code_unformatted = $post->code;
+    public function format_code($text, $post = null) {	
+      if(isset($post)) {
 				$code = $text;
+		  	if(preg_match("/\[gist: ([0-9]+)\]/i", $code, $matches)) {
+					return '<script src="http://gist.github.com/'.$matches[1].'.js"></script>';
+				}
+				$post->code_unformatted = $post->code;
 				$languages = getLanguages();
 				$geshi = new GeSHi($code, $languages[$post->language]);
 				
