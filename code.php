@@ -40,12 +40,12 @@
         Post::check_url($_POST['slug']));
     }
     
-    public function update() {
+    public function update($post) {
       if (empty($_POST['code']))
         error(__("Error"), __("Body can't be blank."));
       if (empty($_POST['language']))
         error(__("Error"), __("Language can't be blank."));
-        $post = new Post($_POST['id']);
+
         $post->update(array("title" => $_POST['title'], "language" => $_POST['language'],
           "code" => $_POST['code']));
     }
