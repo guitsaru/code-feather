@@ -1,5 +1,7 @@
 <?php 
-  require "lib/geshi.php";
+	if (!defined('GESHI_VERSION'))
+    require "lib/geshi.php";
+
   class Code extends Feathers implements Feather {
     
     public function __construct() {
@@ -40,7 +42,9 @@
         Post::check_url($_POST['slug']));
     }
     
-    public function update($post) {
+    public function update() {
+			$post = new Post($_POST['id']);
+			
       if (empty($_POST['code']))
         error(__("Error"), __("Body can't be blank."));
       if (empty($_POST['language']))
